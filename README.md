@@ -30,7 +30,7 @@ Card with Sum of Gross Sales.
 ### Sales Growth Rate
 #### General Formula
 Growth by unit of time % = ((Gross Sales - Total Gross Sales) / Total Gross Sales) * 100
-#### Code
+#### Measures and DAX
 1. Create a table *_All Measures*.
 2. Inside *_All Measures* create a measure: *Total Gross Sales = SUM(Sheet1[Gross Sales])*.
 3. Inside *_All Measures* create a measure: 
@@ -48,7 +48,15 @@ Growth by unit of time % = ((Gross Sales - Total Gross Sales) / Total Gross Sale
   - In *Visualizations>Build visual>Columns* add the following: *'Calendar'[Date]* (Keep *Year* and *Month* only), *_All Measures[Total Gross Sales]*, *_All Measures[Previous Month Gross Sales]*, and *_All Measures[MoM Previous Month Sales %]*.
 #### References
 https://www.youtube.com/watch?v=6vJIAJNTdG0
-
+### Average Transaction Value
+#### General Formula
+Average Total Value = Total Sales / Total Transactions
+#### Measures and DAX
+1. In *Sheet1*, create a new measure: *Total Sales = sum(Sheet1[ Sales])*
+2. In *Sheet1*, create a new measure: *Total Transactions = COUNTROWS(Sheet1)*
+3. In *Sheet1*, create a new measure: *Average Transaction Value = DIVIDE(Sheet1[Total Sales], Sheet1[Total Transactions])*
+#### References
+https://yourcareersupport.com/how-to-calculate-atv/#:~:text=How%20To%20Calculate%20ATV%20%28With%20Formula%2C%20Examples%20and,It%20follows%20the%20same%20formula%20and%20calculation%20method.
 ## Bibliography
 https://blog.enterprisedna.co/power-bi-financial-dashboard-examples/
 https://www.investopedia.com/ask/answers/031815/what-formula-calculating-profit-margins.asp
