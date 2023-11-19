@@ -8,7 +8,10 @@ Create an exercise using Power BI.
 ### Total Sales
 *Total Gross Sales = SUM(Sheet1[Sales])*
 ### Total Profit
+#### Measures and DAX
 *Total Profit = sum(Sheet1[Profit])*
+#### References
+https://www.investopedia.com/terms/g/grossprofit.asp
 ### Gross Profit Margin
 *Gross Profit Margin = DIVIDE(Sheet1[Total Sales]-sum(Sheet1[COGS]),Sheet1[Total Sales])*
 ### Total sales by unit of time. Cumulative chart
@@ -57,7 +60,27 @@ Average Total Value = Total Sales / Total Transactions
 3. In *Sheet1*, create a new measure: *Average Transaction Value = DIVIDE(Sheet1[Total Sales], Sheet1[Total Transactions])*
 #### References
 https://yourcareersupport.com/how-to-calculate-atv/#:~:text=How%20To%20Calculate%20ATV%20%28With%20Formula%2C%20Examples%20and,It%20follows%20the%20same%20formula%20and%20calculation%20method.
-## Bibliography
+### Operating Income
+Insufficient data
+### Gross Marging
+#### General Formula
+Gross Marging = (Net Sales - COGS) / Net Sales
+#### Measures and DAX
+1. Inside the table *Sheet1* create a measure *Gross Margin = DIVIDE(([Total Sales] - sum(Sheet1[COGS])), [Total Sales])*
+2. Create a new *Card* and drag the measure *Gross Marging* in it. 
+#### References
+https://www.investopedia.com/terms/g/grossmargin.asp
+### Revenue
+#### General Formula (Net Revenue)
+Net Revenue = Net Revenue = (Quantity Sold * Unit Price) - Discounts - Allowances - Returns
+Quantity Sold * Unit Price = Sum of Gross Sales
+#### Measures and DAX
+1. Due to the absence of data on allowances and returns, this measure is equivalent to *Total Sales*.
+2. In *Sheet1* create a new measure *Net Revenue = SUM(Sheet1[Gross Sales]) - SUM(Sheet1[Discounts])*.
+3. Create a new *Card* and drag the measure *Net Revenue* in it.
+#### References
+https://www.investopedia.com/terms/r/revenue.asp
+## General References
 https://blog.enterprisedna.co/power-bi-financial-dashboard-examples/
 https://www.investopedia.com/ask/answers/031815/what-formula-calculating-profit-margins.asp
 https://www.youtube.com/watch?v=dMJLypl5HJg
