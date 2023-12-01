@@ -3,7 +3,7 @@
 ## Goal of this project
 
 Create an exercise using Power BI.
-
+For this exercise, we took some of the measures recommended in https://blog.enterprisedna.co/power-bi-financial-dashboard-examples/.
 ## DAX
 ### Total Sales
 *Total Gross Sales = SUM(Sheet1[Sales])*
@@ -13,14 +13,21 @@ Create an exercise using Power BI.
 #### References
 https://www.investopedia.com/terms/g/grossprofit.asp
 ### Gross Profit Margin
-*Gross Profit Margin = DIVIDE(Sheet1[Total Sales]-sum(Sheet1[COGS]),Sheet1[Total Sales])*
+#### Measures and DAX
+1. *Gross Profit Margin = DIVIDE(Sheet1[Total Sales]-sum(Sheet1[COGS]),Sheet1[Total Sales])*
+2. Set the measure as Percentage.
+#### References
+https://www.investopedia.com/ask/answers/031815/what-formula-calculating-profit-margins.asp
 ### Total sales by unit of time. Cumulative chart
+#### Measures, Tables, and DAX
 1. Create new Calendar Table: *Calendar = CALENDAR(min(Sheet1[Date]), MAX(Sheet1[Date]))*.
-2. Create new table: *_Measures*.
+2. Create a new table: *_Measures*.
 3. Create new measure inside table _Measures: *Sales Cumulative = CALCULATE(SUM(Sheet1[ Sales]), 'Calendar'[Date] <= MAX( 'Calendar'[Date]))*.
 4. Visualization: line, x axis = *'Calendar'[Date]*, y axis = *Sales Cumulative*.
+#### References
+https://www.youtube.com/watch?v=dMJLypl5HJg
 ### Total sales with filters. Bar chart
-Visualization created using Power BI tools. No DAX needed. Bar chart of sales by countries was created. Two filters (Product and Segment) were added.
+Visualization created using Power BI tools. No DAX is needed. We created a bar chart of sales by country. Finally, we added two filters (Product and Segment).
 ### Total sales by territory, product, and customer. Table
 Visualization created using Power BI tools. 
 *Visulaizations>Build visual>Columns*:
@@ -62,9 +69,9 @@ Average Total Value = Total Sales / Total Transactions
 https://yourcareersupport.com/how-to-calculate-atv/#:~:text=How%20To%20Calculate%20ATV%20%28With%20Formula%2C%20Examples%20and,It%20follows%20the%20same%20formula%20and%20calculation%20method.
 ### Operating Income
 Insufficient data
-### Gross Marging
+### Gross Margin
 #### General Formula
-Gross Marging = (Net Sales - COGS) / Net Sales
+Gross Margin = (Net Sales - COGS) / Net Sales
 #### Measures and DAX
 1. Inside the table *Sheet1* create a measure *Gross Margin = DIVIDE(([Total Sales] - sum(Sheet1[COGS])), [Total Sales])*
 2. Create a new *Card* and drag the measure *Gross Marging* in it. 
@@ -80,8 +87,4 @@ Quantity Sold * Unit Price = Sum of Gross Sales
 3. Create a new *Card* and drag the measure *Net Revenue* in it.
 #### References
 https://www.investopedia.com/terms/r/revenue.asp
-## General References
-https://blog.enterprisedna.co/power-bi-financial-dashboard-examples/
-https://www.investopedia.com/ask/answers/031815/what-formula-calculating-profit-margins.asp
-https://www.youtube.com/watch?v=dMJLypl5HJg
 
