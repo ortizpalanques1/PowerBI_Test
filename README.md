@@ -2,7 +2,8 @@
 
 ## Goal of this project
 
-Create an exercise using Power BI.
+To share the instructions to build a simple dashboard comprehensive of valuable business metrics. Accordingly, our main contribution is this document with all the necessary DAX commands and formulas.
+Because of the nature of the original data, some metrics are missing.
 For this exercise, we took some of the measures recommended in https://blog.enterprisedna.co/power-bi-financial-dashboard-examples/.
 ## DAX
 ### Total Sales
